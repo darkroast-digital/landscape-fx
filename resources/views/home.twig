@@ -1,0 +1,128 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}home{% endblock %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% embed 'partials/hero.twig' ignore missing with {'full': true} %}
+    {% block heroContent %}
+        <h1><span>Come</span><span>Alive</span><span>Outside</span></h1>
+        <h6>Welcome to Landscape Effects</h6>
+    {% endblock %}
+    {% block heroBG %}<video src="http://res.cloudinary.com/darkroast-digital/video/upload/v1509376181/lfx/header.mp4" class="video image--cover" autoplay="true" loop="true"></video>{% endblock %}
+{% endembed %}
+
+<!-- End Hero -->
+
+<section class="home__intro">
+    <h2>We Make Beautiful Things</h2>
+</section>
+
+<section class="home__grid container--collapse container--full">
+    <div class="column-3 tile-1">
+        <h6>Landscape Effects</h6>
+        <h2>On the cutting edge of design</h2>
+        <a href="{{ path_for('about') }}" class="button">Learn More</a>
+    </div>
+    <div class="column-3 tile-2">
+        <h2>Your Career</h2>
+        <h4>Happens here</h4>
+        <a href="{{ path_for('careers') }}" class="button">Learn More</a>
+    </div>
+    <div class="column-6 tile-3 tile" data-scale="1.05" data-image="assets/img/grid-three.jpg">
+        <h2>Rochester Place Golf Club &amp; Resort</h2>
+        <a href="https://rochesterplace.com/" class="button">Learn More</a>
+    </div>
+    <div class="column-3 tile-4 tall">
+        <div class="tall__split has--image tile" data-scale="1.05" data-image="assets/img/grid-item-4.jpg">
+            <h6>Step outside,</h6>
+            <h2>Come Alive</h2>
+        </div>
+        <div class="tall__split">
+            <ul>
+                <li><a href="https://www.facebook.com/Landscape-Effects-644331938995519/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="column-3 tile-5 tall tile" data-scale="1.05" data-image="assets/img/grid-five.jpg">
+        <h6>Your career</h6>
+        <h2>Starts Here</h2>
+        <a href="{{ path_for('careers') }}" class="button">Find Out How</a>
+    </div>
+    <div class="column-3 tile-6 tall">
+        <div class="tall__split has--image tile" data-scale="1.05" data-image="assets/img/grid-item-6.jpg">
+            
+        </div>
+        <div class="tall__split">
+            <a href="{{ path_for('portfolio') }}">
+                <h6>View</h6>
+                <h2>All Projects</h2>
+            </a>
+        </div>
+    </div>
+    <div class="column-3 tile-7 tall tile" data-scale="1.05" data-image="assets/img/grid-item-7.jpg">
+        <h2>Savour the simple pleasure</h2>
+        <h6>of being outdoors</h6>
+    </div>
+</section>
+
+<!-- End Grid -->
+
+<section class="home__about container--collapse container--full">
+    <div class="home__about-image column-6">
+        <img src="/assets/img/hp-about.jpg" draggable="false" class="image--cover">
+    </div>
+    <div class="home__about-content column-6">
+        <div>
+            <h2>Welcome to Landscape Effects</h2>
+            <hr>
+            <p>Welcome to Landscape Effects. An award Winning landscape Design and Build Company based in beautiful Southwestern Ontario. With over 25 years of experience our creative team selects industry leading techniques to design, build and maintain breathtaking landscapes.</p>
+            <div>
+                <img src="/assets/img/awar.png" draggable="false">
+                <p>In recognition of our innovative design and flawless installation, we have recently been honoured with 8 Regional and 5 Provincial industry awards. Further proof that when you plant the seeds of success there’s no limit!</p>
+            </div>
+            <a href="{{ path_for('about') }}" class="button">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- End About -->
+
+<section class="home__projects">
+    <div class="container--block">
+        <h2>Why Landscape Effects</h2>
+        <div class="container container--full">
+            <div class="column-6">
+                <p>At Landscape Effects, our goal is to influence and enhance the way you experience the outdoors. We create well planned, carefully crafted, beautiful outdoor environments that enrich both human and natural life. As skilled designers, builders and visionaries, we provide a Landscape Design and Build service that is unparalleled in Southwestern Ontario</p>
+                <p>We offer a wide range of services, from basic design and architectural documents on small improvement projects, to larger scale design and construction. Our maintenance staff will ensure that your new environment is well kept and looking as vibrant and healthy with each passing season.</p>
+            </div>
+            <div class="column-6">
+                <p>One of our core philosophies at Landscape Effects is offering Big Ideas for any space. As a result, we’re proud to be able to deliver suitable solutions within your budget without compromising on quality.</p>
+                <p>We employ a team of visionaries that ensures each project receives the full benefit of Landscape Effects creativity, high standards and innovative eye for design. Our goal is to wake up Windsor Essex county to the beauty that is in our back yard. Whether your space is small and intimate or grand and spacious, our design and build team cannot wait to transform it into your ideal escape.</p>
+            </div>
+        </div>
+        <a href="{{ path_for('portfolio') }}" class="button">View Projects</a>
+    </div>
+</section>
+
+<!-- End Home Projects -->
+
+<div class="home__cta container container--collapse container--full">
+    <a href="{{ path_for('portfolio') }}" class="home__cta-work column-6">
+        <div>
+            <h6>Creativity Redefined</h6>
+            <h2>View Our Work</h2>
+        </div>
+    </a>
+    <a href="{{ path_for('contact') }}" class="home__cta-contact column-6">
+        <div>
+            <h6>Ready For Your Project?</h6>
+            <h2>Contact Us</h2>
+        </div>
+    </a>
+</div>
+
+{% endblock %}

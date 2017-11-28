@@ -1,0 +1,45 @@
+/*
+|--------------------------------------------------------------------------
+| #TYPOGRAPHY
+|--------------------------------------------------------------------------
+*/
+
+// Helper functions
+
+@function decimal-round(
+  $number,
+  $digits: $ms-scale
+) {
+
+  $num: 1;
+
+  @for $i from 1 through $digits {
+    $num: $num * 10;
+  }
+
+  @return round( $number * $num ) / $num;
+
+}
+
+@function ms(
+  $increment,
+  $base   : $font-size,
+  $ratio  : $ms-ratio,
+  $scale  : $ms-scale
+) {
+
+  @if $increment > 0 {
+    @for $i from 1 through $increment {
+      $base: $base * $ms-ratio;
+    }
+  }
+
+  @if $increment < 0 {
+    @for $i from -1 through $increment {
+      $base: $base / $ms-ratio;
+    }
+  }
+
+  @return decimal-round($base, $scale);
+
+}

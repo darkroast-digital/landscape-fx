@@ -1,0 +1,145 @@
+/*
+|--------------------------------------------------------------------------
+| #CONFIG
+|--------------------------------------------------------------------------
+*/
+
+
+
+// #NAMESPACE
+// =========================================================================
+
+    $is-namespaced: false !default;
+
+
+
+// #BACKGROUND COLOR
+// =========================================================================
+
+    $is-background-white: false !default;
+
+
+// #CONFIG COLORS
+// =========================================================================
+
+    // Theme
+    $primary: #D42B35;
+    $secondary: #F96281;
+
+    // Utility
+    $error: #F04F54;
+    $success: #43CB9D;
+    $warning: #FDB557;
+
+    // Shades
+
+    $white: #ffffff;
+    $black: #18161C;
+
+    // Greys
+    $grey: #ADB5BD;
+
+    $grey-light: #DEE2E6;
+    $grey-lighter: #E9ECEF;
+    $grey-lightest: #F8F8F8;
+
+    $grey-dark: desaturate(lighten($black, 15%), 7%);
+    $grey-darker: desaturate(lighten($black, 10%), 7%);
+    $grey-darkest: desaturate(lighten($black, 5%), 7%);
+
+
+
+// #CONFIG TYPOGRAPHY
+// =========================================================================
+
+    // Fonts
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700');
+
+    $font-one: 'Montserrat';
+    $font-two: 'Montserrat';
+    $font-mono: 'Courier';
+
+    // Font Size
+    $font-size: 1.05rem !default;
+
+    // Colors
+    $font-color: darken($grey, 30%);
+    $heading-color: $grey-darker;
+
+    //Heading Weight
+    $heading-weight: bold !default;
+
+    // Options
+
+    $ms-ratio  : 1.125 !default;
+    $ms-scale  : 3 !default;
+
+
+
+// #THEME
+// =========================================================================
+
+    // Is Dark
+    $is-dark: false !default;
+
+    // Background Color
+    $background: $white;
+
+        @if ($is-dark) {
+            $background: $grey-darkest;
+            $font-color: invert($grey-dark);
+            $heading-color: invert($black);
+        }
+
+
+
+// #CONFIG SHADOW
+// =========================================================================
+
+    $has-shadow: false !default;
+
+
+
+// #CONFIG RADIUS
+// =========================================================================
+
+
+    $has-radius: true !default;
+
+
+
+// #CONFIG NAV
+// =========================================================================
+
+    $nav-is-right: true !default;
+    $nav-is-fixed: true !default;
+
+// #CONFIG BREAKPOINTS
+// =========================================================================
+
+    $small: 30em; // 480px
+    $medium: 48em; // 768px
+    $large: 90em; // 1440px
+    $extra-large: 1441px; // 1441px
+
+
+
+// #CONFIG GRID
+// =========================================================================
+
+    $columns: 12;
+    $gutter: 2rem;
+
+
+
+// #CONFIG Z-INDEX
+// =========================================================================
+
+    $lower: 0;
+    $low: 20;
+    $middle: 40;
+    $high: 60;
+    $higher: 80;
+    $highest: 100;
+
+

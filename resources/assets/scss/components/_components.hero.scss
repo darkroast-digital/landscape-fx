@@ -1,0 +1,34 @@
+/*
+|--------------------------------------------------------------------------
+| #HERO
+|--------------------------------------------------------------------------
+*/
+
+@mixin hero($centered: false, $full: false, $background: $primary, $height: 50vh) {
+    background: $background;
+    position: relative;
+    height: $height;
+
+    @if ($centered) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @if ($full) {
+        height: 100vh;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.hero {
+    @include hero();
+}
+
+.hero--full {
+    @include hero($centered: true, $full: true);
+}

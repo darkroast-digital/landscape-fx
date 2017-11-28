@@ -1,0 +1,91 @@
+/*
+|--------------------------------------------------------------------------
+| #SIDEBAR
+|--------------------------------------------------------------------------
+*/
+
+$sidebar-width: 65px;
+
+.sidebar {
+    position: fixed;
+    z-index: z(highest);
+    height: 100%;
+    background: #373A46;
+
+    a:not(.sidebar__brand) {
+        color: color(grey-lighter);
+        position: relative;
+        display: block;
+        padding: 1rem 0;
+        width: 100%;
+        
+        span {
+            position: absolute;
+            display: block;
+            top: 50%;
+            right: -90px;
+            min-width: 100px;
+            background: color(black);
+            padding: .25rem;
+            opacity: 0;
+            transform: translateX(-5px) translateY(-50%);
+            visibility: hidden;
+            pointer-events: none;
+            transition: all .2s ease(inOutQuint);
+            @include shadow(raised);
+
+            @if ($has-radius) {
+                border-radius: radius(small);
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: -8px;
+                width: 0;
+                height: 0;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                border-right: 8px solid color(black);
+                top: 50%;
+                transform: translateY(-50%);
+                @include shadow(raised);
+            }
+        }
+
+        &:hover {
+
+            span {
+                transform: translateX(0) translateY(-50%);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__brand {
+        display: block;
+        background: color(primary);
+        height: $sidebar-width;
+        width: $sidebar-width;
+        padding: .5rem;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        width: 100%;
+        padding: 0;
+        padding: 1rem 0;
+    }
+
+    li {
+        width: 100%;
+        text-align: center;
+    }
+}

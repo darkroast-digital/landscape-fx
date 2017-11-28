@@ -1,0 +1,13 @@
+<nav class="nav">
+    <div class="nav__container">
+        <a href="{{ path_for('home') }}" class="nav__brand"><img src="/assets/img/logo.svg" draggable="false"></a>
+        <ul class="nav__navbar">
+            <li><a href="{{ path_for('home') }}">Home</a></li>
+            <li><a href="{{ path_for('about') }}">About Us</a></li>
+            <li><a href="{{ path_for('portfolio') }}">Portfolio</a></li>
+            <li><a href="{{ path_for('careers') }}">Careers</a></li>
+            <li><a href="{{ path_for('contact') }}">Contact</a></li>
+        </ul>
+        {% include 'partials/hamburger.twig' %}
+    </div>
+</nav>

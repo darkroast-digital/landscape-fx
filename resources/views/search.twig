@@ -1,0 +1,38 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}search{% endblock %}
+{% block title %}Search | {{ query }}{% endblock %}
+
+{% block content %}
+
+{% embed 'partials/hero.twig' ignore missing with {'full': false} %}
+    {% block heroContent %}<h1>Search</h1>{% endblock %}
+    {% block heroBG %}<img src="/assets/img/portfolio-header.jpg" draggable="false" class="image--cover">{% endblock %}
+{% endembed %}
+
+
+<div class="container--block search-content">
+
+    <form action="{{ path_for('search') }}" method="get">
+        <div class="field">
+            <input name="query" type="text" value="{{ query }}" placeholder="Search...">
+        </div>
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    {% if query %}
+
+    <h6>Results</h6>
+
+    <ul>
+        <li><a href="{{ path_for(query) }}">{{ query | capitalize }}</a></li>
+    </ul>
+
+    {% else %}
+
+    <h6>Sorry nothing matched your search.</h6>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

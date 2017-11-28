@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Viewport Meta -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Styles -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+
+    <!-- Mobile Theme Colour -->
+
+    <meta name="theme-color" content="#D73441">
+
+    <!-- Title and Description -->
+
+    <title>Landscape Effects | {% block title %}{% endblock %}</title>
+    <meta type="description" content="Award Winning landscape Design and Build Company based in beautiful Southwestern Ontario">
+
+    <!-- Favicons -->
+
+    <link rel="icon" href="assets/img/fav.png">
+
+    <meta property="og:title" content="Landscape Effects ">
+    <meta property="og:description" content="Award Winning landscape Design and Build Company based in beautiful Southwestern Ontario">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://landscapeeffects.com">
+    <meta property="og:site_name" content="Landscape Effects">
+    <meta property="og:image" content=" /assets/img/og.jpg">
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-100160558-6', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+     <script src="js/polyfill/html5-shiv.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+    <div class="{% block pageclass %}{% endblock %}" id="app">
+
+
+        
+        {% include 'partials/nav.twig' %}
+        {% include 'partials/off-canvas.twig' %}
+        {% include 'partials/overlay.twig' %}
+
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__content container">
+            <div class="footer__logo column-2">
+                <img class="image--contain" src="/assets/img/footer-logo.png" draggable="false">
+            </div>
+            <div class="footer__contact column-3">
+                <h6>Landscape Effects</h6>
+                <ul>
+                    <li>1125 County Road 42.</li>
+                    <li>Belle River, ON</li>
+                    <li>N0R 1A0</li>
+                    <li>T: 519.727.4769</li>
+                    <li>E: contact@landscapefx.com</li>
+                </ul>
+            </div>
+            <div class="footer__navigation column-3">
+                <h6>Navigation</h6>
+                <ul>
+                    <li><a href="{{ path_for('home') }}">Home</a></li>
+                    <li><a href="{{ path_for('about') }}">About Us</a></li>
+                    <li><a href="{{ path_for('portfolio') }}">Portfolio</a></li>
+                    <li><a href="{{ path_for('careers') }}">Careers</a></li>
+                    <li><a href="{{ path_for('contact') }}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__search column-4">
+                <form class="search" action="{{ path_for('search') }}" method="get">
+                    <div class="field field__icon">
+                        <label for="query">Search</label>
+                        <input name="query" type="text">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            &copy; {{ now | date('Y')}} Landscape Effects
+            <a href="https://www.facebook.com/Landscape-Effects-644331938995519/"><i class="fa fa-facebook"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4u3j4D_yS-ICoFA2P_3nXK9msRyMTAwE"></script>
+    <script src="/assets/js/app.js"></script>
+
+    <!-- See you space cowboy... -->
+</body>
+</html>

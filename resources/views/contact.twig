@@ -1,0 +1,51 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}contact{% endblock %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+{% embed 'partials/hero.twig' ignore missing with {'full': false} %}
+    {% block heroContent %}<h1>Let's Talk About Transforming Your Space</h1>{% endblock %}
+    {% block heroBG %}<img src="/assets/img/contact-header.jpg" draggable="false" class="image--cover">{% endblock %}
+{% endembed %}
+
+<!-- End Hero -->
+
+<div class="contact-content container--block">
+    <h6>Contact</h6>
+    <h3>Get in touch with us</h3>
+    <p>Thanks for your interest in our products and services! We are happy to answer any questions you may have. Reach out to us and we’ll respond as soon as possible.</p>
+    <ul>
+        <li>1125 County Road 42.</li>
+        <li>Belle River, ON</li>
+        <li>N0R 1A0</li>
+        <li>T: 519.727.4769</li>
+        <li>E: contact@landscapefx.com</li>
+    </ul>
+    <form action="{{ path_for('contact') }}" method="post" class="contact__form">
+        <div class="field-group">
+            <div class="field" enctype="multipart/form-data">
+                <label for="name">Name</label>
+                <input type="text" name="name">
+            </div>
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="text" name="email">
+            </div>
+            <div class="field">
+                <label for="subject">Subject</label>
+                <input type="text" name="subject">
+            </div>
+        </div>
+        <div class="field field--message">
+            <label for="message">Message</label>
+            <textarea name="message"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="map" id="map"></div>
+
+
+{% endblock %}

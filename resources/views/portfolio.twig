@@ -1,0 +1,43 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}portfolio{% endblock %}
+{% block title %}Portfolio{% endblock %}
+
+{% block content %}
+
+{% embed 'partials/hero.twig' ignore missing with {'full': false} %}
+    {% block heroContent %}<h1>Our Portfolio</h1>{% endblock %}
+    {% block heroBG %}<img src="/assets/img/portfolio-header.jpg" draggable="false" class="image--cover">{% endblock %}
+{% endembed %}
+
+<!-- End Hero -->
+
+<nav class="portfolio__nav">
+    <div class="container container--full">
+        <div class="active-project">All</div>
+        <ul>
+            <li class="portfolio__category" data-portfolio="all">All</li>
+            <li class="portfolio__category" data-portfolio="commercial">Commercial</li>
+            <li class="portfolio__category" data-portfolio="residential">Residential</li>
+            <li class="portfolio__category" data-portfolio="rooftop">Rooftop</li>
+        </ul>
+    </div>
+</nav>
+
+<section class="portfolio__container container--full container--collapse">
+    {% for item in portfolio %}
+        <div class="image__container column-3">
+            <img src="{{ item.number }}" draggable="false" class="image--cover portfolio__image" data-portfolio="{{ item.type }}">
+        </div>
+    {% endfor %}
+</section>
+
+<div class="modal">
+    <div class="prev"><i class="fa fa-angle-left"></i></div>
+    <div class="next"><i class="fa fa-angle-right"></i></div>
+    <div class="block column-6">
+        <img src="" draggable="false" class="image--cover">
+    </div>
+</div>
+
+
+{% endblock %}

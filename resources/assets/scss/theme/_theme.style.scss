@@ -1,0 +1,1316 @@
+/*
+|--------------------------------------------------------------------------
+| #THEME
+|--------------------------------------------------------------------------
+*/
+
+
+
+
+
+// #SETUP
+// =========================================================================
+
+body {
+    display: none;
+    height: 100%;
+    background: $grey-lightest;
+}
+
+h1 {
+    font-size: ms(6);
+}
+
+hr {
+    max-width: 20%;
+    border-bottom-width: 3px;
+    border-bottom-color: $primary;
+}
+
+.hero {
+
+    img, video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.list-inline {
+    display: flex;
+    list-style-type: none;
+
+    li {
+        padding: .5rem;
+        width: 33.33333%;
+    }
+
+    img {
+        height: 200px;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    @include breakpoint(md) {
+        display: block;
+
+        li {
+            width: 100%;
+        }
+    }
+}
+
+
+// #FORM
+// =========================================================================
+
+.field__icon {
+
+    .icon {
+        top: 20%;
+    }
+}
+
+label {
+    position: absolute;
+    top: 20%;
+    left: .5rem;
+    pointer-events: none;
+    transition: all .2s ease(inOutSine);
+}
+
+input,
+textarea {
+    border: none;
+    border-bottom: solid 1px $grey;
+    border-radius: 0;
+}
+
+.field--focused {
+
+    label {
+        top: -1rem;
+        left: 2px;
+        font-size: ms(-2);
+        color: $primary;
+    }
+}
+
+.field--message {
+
+    label {
+        top: .5rem;
+    }
+
+    &.field--focused {
+
+        label {
+            top: -1rem;
+        }
+    }
+}
+
+
+
+// #NAV
+// =========================================================================
+
+.nav {
+    background: transparent;
+    transition: all .2s ease(inOutSine);
+
+    &--hidden {
+        transform: translateY(-110%);
+    }
+
+    &__brand {
+        width: 125px;
+        filter: brightness(100);
+    }
+
+    a {
+        color: $white;
+    }
+
+    &--scrolled {
+        background: $white;
+        @include shadow(raised);
+
+        .nav__brand {
+            filter: none;
+        }
+
+        a {
+            color: $font-color;
+        }
+    }
+}
+
+
+
+// #HOME
+// =========================================================================
+
+.home {
+
+    .hero {
+        text-align: center;
+
+        h1, h6 {
+            color: $white;
+        }
+
+        h1 {
+            font-size: ms(15);
+            text-transform: uppercase;
+            margin-bottom: 0;
+            text-shadow: 0 1px 3px rgba($black, .5);
+
+            @include breakpoint(md) {
+                font-size: ms(12);
+            }
+
+            span {
+                display: block;
+                margin-top: -4rem;
+
+                @include breakpoint(md) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    &__intro {
+        background: url('../img/intro.jpg');
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8rem;
+        text-align: center;
+
+        h2 {
+            color: $white;
+            margin-bottom: 0;
+            font-size: ms(12);
+            text-transform: uppercase;
+
+            @include breakpoint(md) {
+                font-size: ms(6);
+            }
+        }
+    }
+
+
+
+// #TILE
+// =========================================================================
+
+.tile {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+  .photo {
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: transform .2s ease(inOutSine);
+  }
+
+
+// #HOME GRID
+// =========================================================================
+
+    &__grid {
+        height: 100vh;
+
+        @include breakpoint(md) {
+            height: auto;
+        }
+    }
+
+
+
+// #HOME ABOUT
+// =========================================================================
+
+    &__about {
+
+        h2 {
+            font-size: ms(8);
+            text-transform: uppercase;
+
+            @include breakpoint(md) {
+                font-size: ms(6);
+            }
+        }
+
+        &-content {
+            padding: 4rem;
+            background: $grey-lightest;
+            background-image: url(../img/tree-opa.png);
+            background-repeat: no-repeat;
+            background-size: 150%;
+            background-position: 100% 105%;
+
+            > div {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            div div {
+                display: flex;
+                align-items: flex-start;
+
+                @include breakpoint(md) {
+                    display: block;
+                } 
+
+                img {
+                    max-width: 30%;
+                }
+            }
+
+            a {
+                clear: both;
+                max-width: 30%;
+                text-align: center;
+                margin-top: 2rem;
+
+                @include breakpoint(md) {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+
+
+// #HOME PROJECTS
+// =========================================================================
+
+    &__projects {
+        text-align: center;
+        padding: 4rem 0;
+        background: $white;
+
+        h2 {
+            text-transform: uppercase;
+            font-size: ms(8);
+
+            @include breakpoint(md) {
+                font-size: ms(6);
+            }
+        }
+
+        .container--full {
+            text-align: justify;
+        }
+    }
+
+
+
+// #HOME CTA
+// =========================================================================
+
+    &__cta {
+
+        h2 {
+            font-size: ms(10);
+        }
+
+        &-work {
+            background: $grey-lightest;
+
+            h2, h6 {
+                color: $primary;
+                margin-bottom: 0;
+            }
+
+            div {
+                border-radius: 50%;
+                border: solid 15px $primary;
+                height: 450px;
+                width: 450px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                transition: all .3s ease;
+
+                @include breakpoint(md) {
+                    height: 300px;
+                    width: 300px;
+                }
+            }
+        }
+
+        &-contact {
+            background: $primary;
+
+            h2, h6 {
+                color: $white;
+                margin-bottom: 0;
+            }
+
+            div {
+                border-radius: 50%;
+                border: solid 15px $white;
+                height: 450px;
+                width: 450px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+                @include breakpoint(md) {
+                    height: 300px;
+                    width: 300px;
+                }
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            height: 550px;
+
+            @include breakpoint(md) {
+                height: 450px;
+            }
+
+            &:hover {
+
+                div {
+                    border-radius: 0;
+                    height: 200px;
+                }
+            }
+        }
+    }
+
+
+
+}
+
+[class*='tile-'] {
+    height: 35%;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 45px;
+            width: 45px;
+            border: solid 2px $white;
+            border-radius: radius(round);
+            margin-right: 1rem;
+        }
+    }
+
+    a {
+        color: $white;
+    }
+
+    h2, h4, h6 {
+        color: $white;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        max-width: 70%;
+    }
+
+    h2 {
+        font-size: ms(7);
+
+        @include breakpoint(md) {
+                font-size: ms(6);
+            }
+    }
+
+    .button {
+        margin-top: 1rem;
+    }
+}
+
+.tall {
+    height: 65%;
+
+    &__split {
+        height: 50%;
+    }
+}
+
+.tile-1 {
+    background: $black;
+    padding: 2rem;
+
+    h2 {
+        font-size: ms(5);
+    }
+
+    @media only screen and (min-width: 1441px) {
+        
+        h2 {
+            font-size: ms(8);
+        }
+    }
+}
+
+.tile-2 {
+    background: $primary;
+    padding: 3rem;
+
+    .button {
+        background: $black;
+    }
+}
+
+.tile-3 {
+    background-size: cover;
+    padding: 3rem;
+}
+
+.tile-4 {
+    background: $primary;
+
+    .tall__split {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include breakpoint(md) {
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &:first-of-type {
+            background-size: cover;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 3rem;
+        }
+    }
+}
+
+.tile-5 {
+    background-size: cover;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.tile-6 {
+    background: $black;
+
+    .tall__split {
+
+        @include breakpoint(md) {
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            padding-left: 3rem;
+        }
+
+        &:first-of-type {
+            background-size: cover;
+        }
+    }
+}
+
+.tile-7 {
+    background-size: cover;
+    padding: 3rem;
+}
+
+
+
+
+// #FOOTER
+// =========================================================================
+
+.footer {
+    background: $black;
+    color: color(white);
+
+    img {
+
+        @include breakpoint(md) {
+            max-width: 60%;
+        }
+    }
+
+    a, h6 {
+        color: color(white);
+    }
+
+    h6 {
+        text-transform: uppercase;
+        font-size: ms(0);
+        color: color(grey);
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    &__content {
+        padding: 5rem 0;
+
+        @include breakpoint(md) {
+            padding: 5rem 2rem;
+
+            div {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    input {
+        color: $white;
+    }
+
+    &__copyright {
+        padding: 1rem;
+        border-top: solid 1px color(grey-darker);
+        font-size: ms(-2);
+        color: color(grey);
+
+        a {
+            float: right;
+            color: color(grey);
+        }
+    }
+}
+
+
+
+// #ABOUT
+// =========================================================================
+
+.about {
+
+// #HERO
+// =========================================================================
+
+.hero {
+    display: flex;
+    align-items: center;
+    padding: 4rem;
+    
+    h1 {
+        color: $white;
+        text-transform: uppercase;
+        font-size: ms(10);
+
+        @include breakpoint(md) {
+            font-size: ms(8);
+            text-align: center;
+        }
+    }
+}
+
+
+
+// #INTRO
+// =========================================================================
+
+    &__intro {
+        color: $white;
+
+        h4, h2 {
+            color: $white;
+            text-transform: uppercase;
+        }
+
+        h4 {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: ms(12);
+
+            @include breakpoint(md) {
+                font-size: ms(6);
+            }
+
+            .switcher {
+                display: block;
+                margin-top: -1rem;
+                position: relative;
+                min-width: 350px;
+                min-height: 100px;
+
+                @include breakpoint(md) {
+                    margin-top: 0;
+                    margin-bottom: -4rem;
+                }
+
+                span {
+                    position: absolute;
+                    top: 0;
+                    opacity: 0;
+                    animation: rotateWord 6s linear infinite 0s;
+
+                    &:nth-of-type(2) {
+                        animation-delay: 2s;
+                    }
+
+                    &:last-of-type {
+                        animation-delay: 4s;
+                    }
+                }
+            }
+        }
+
+        &-content {
+            padding: 3rem;
+            background: $primary;
+            background-image: url(../img/tree-bg-3.png);
+            background-repeat: no-repeat;
+            background-size: 150%;
+            background-position: 100% 105%;
+        }
+    }
+
+
+
+// #ABOUT CTA
+// =========================================================================
+
+    &__cta {
+        background: url('../img/intro.jpg');
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8rem;
+        text-align: center;
+
+        h2 {
+            color: $white;
+            margin-bottom: 0;
+            font-size: ms(10);
+            text-transform: uppercase;
+
+            @include breakpoint(md) {
+                font-size: ms(6);
+            }
+        }
+    }
+
+
+
+// #ABOUT PROCESS
+// =========================================================================
+
+    &__process {
+        padding: 5rem 0;
+        background: $grey-lightest;
+
+        h6,
+        h2 {
+            text-transform: uppercase;
+        }
+
+        h6 {
+            margin-bottom: 0;
+            color: $primary;
+        }
+    }
+
+
+
+// #TEAM
+// =========================================================================
+
+    &__team {
+        padding: 4rem 0;
+
+        @include breakpoint(md) {
+            padding: 4rem 2rem;
+        }
+
+        h2,
+        h4 {
+            text-transform: uppercase;
+        }
+
+        figure {
+            height: 250px;
+            position: relative;
+            margin-bottom: $gutter;
+            color: $white;
+            text-align: center;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        figcaption {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            width: 100%;
+            background: rgba($black, .6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 2rem;
+            transition: all .2s ease(inOutSine);
+
+            &:hover {
+                background: rgba($black, .4);
+            }
+        }
+
+        h6 {
+            margin-bottom: 0;
+            text-transform: uppercase;
+            color: $white;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.process-compare {
+
+    @include breakpoint(md) {
+        margin-bottom: 2rem;
+    }
+}
+
+.image-container {
+    position: relative;
+    height: 400px;
+    max-width: 1000px;
+    overflow: hidden;
+    margin: 0em auto;
+
+    img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.resize-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    will-change: transform;
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        height: 100%;
+        width: auto;
+        max-width: none;
+    }
+}
+
+.handle {
+    position: absolute;
+    height: 44px;
+    width: 44px;
+    left: 50%;
+    top: 50%;
+    margin-left: -22px;
+    margin-top: -22px;
+    border-radius: 50%;
+    background: $primary url('../img/arrows.svg') no-repeat center center;
+    cursor: move;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: $primary;
+        transform: translate3d(-50%,-50%,0);
+        height: 1000px;
+        width: 5px;
+    }
+  
+}
+
+
+
+// #ABOUT SERVICES
+// =========================================================================
+
+.service {
+    position: relative;
+    
+    &__container {
+        position: relative;
+        z-index: 10;
+        background: color(grey-lightest);
+        position: relative;
+        padding: 5rem 3rem;
+        height: 100%;
+        transition: all .2s ease(inOutSine);
+
+        &:hover {
+            background: rgba(color(grey-lightest), .8);
+        }
+
+        h6 {
+            margin-bottom: 0;
+            color: $grey-dark;
+        }
+
+        h2 {
+            font-size: ms(6);
+            color: $grey-dark;
+
+            span {
+                color: $grey;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes rotateWord {
+  0%   { opacity: 0; }
+  2%   { opacity: 0; transform: translateY(-30px); }
+  5%   { opacity: 1; transform: translateY(0px);}
+  17%  { opacity: 1; transform: translateY(0px); }
+  20%  { opacity: 0; transform: translateY(30px); }
+  80%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+
+
+// #PORTFOLIO
+// =========================================================================
+
+.portfolio {
+
+// #HERO
+// =========================================================================
+
+    .hero {
+        display: flex;
+        align-items: center;
+        padding: 4rem;
+        
+        h1 {
+            color: $white;
+            text-transform: uppercase;
+            font-size: ms(10);
+
+            @include breakpoint(md) {
+                font-size: ms(8);
+                text-align: center;
+            }
+        }
+    }
+
+
+
+// #NAV
+// =========================================================================
+
+    &__nav {
+        background: $black;
+        padding: 1rem;
+        color: $white;
+
+        ul {
+            display: flex;
+            list-style-type: none;
+            @include flex-right();
+
+            @include breakpoint(md) {
+                display: block;
+                padding-left: 0;
+            }
+        }
+
+        li {
+            padding: 0 1rem;
+            cursor: pointer;
+
+            @include breakpoint(md) {
+                padding: .5rem;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.image__container {
+    height: 250px;
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    position: absolute;
+    z-index: z(highest);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: ms(7);
+    color: $white;
+}
+
+.prev {
+    left: 0;
+    padding: 4rem 20rem;
+    cursor: pointer;
+}
+
+.next {
+    right: 0;
+    padding: 4rem 20rem;
+    cursor: pointer;
+}
+
+.slick-slider {
+
+    * {
+        outline: none;
+    }
+
+    img {
+        padding: .5rem;
+        height: 400px;
+        object-fit: cover;
+        cursor: grab;
+
+        @include breakpoint(md) {
+            height: 200px;
+        }
+    }
+}
+
+.slick-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    max-width: 80%;
+    margin: 0 auto 2rem;
+    padding: 0;
+
+
+
+    button {
+        padding: 0;
+        height: 5px;
+        width: 30px;
+        background: rgba(color(grey-darker), .6);
+        border: none;
+        border-radius: 0;
+        margin-right: .25rem;
+
+        @include breakpoint(md) {
+            width: 15px;
+        }
+    }
+}
+
+
+// #CAREERS
+// =========================================================================
+
+.careers {
+    background: url('../img/careers-bg.jpg');
+
+// #HERO
+// =========================================================================
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem;
+        text-align: center;
+        
+        h1 {
+            color: $white;
+            text-transform: uppercase;
+            font-size: ms(10);
+
+            @include breakpoint(md) {
+                font-size: ms(6);
+            }
+        }
+
+        h6 {
+            color: $white;
+        }
+    }
+
+    &-content {
+        padding: 4rem 1rem;
+        background: rgba($white, .90);
+        margin: 1rem;
+        text-align: center;
+        @include shadow(light);
+
+        h2, h3, h4, h5, h6 {
+            text-transform: uppercase;
+        }
+    }
+
+    .about__cta {
+        background: url('../img/careers__cta.jpg');
+        background-size: cover;
+    }
+
+    article {
+        text-align: left;
+    }
+
+    aside {
+        > img {
+            width: 100%;
+        }
+    }
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+
+    li {
+        width: 50%;
+        text-align: center;
+    }
+
+    img {
+        max-width: 40%;
+    }
+
+    iframe {
+        height: 200px;
+        margin-bottom: 1rem;
+    }
+}
+
+form {
+    width: 100%;
+}
+
+
+// #CONTACT
+// =========================================================================
+
+.field-group {
+    width: 100%;
+    display: flex;
+
+    @include breakpoint(md) {
+        display: block;
+    }
+
+    .field {
+        margin-right: 1rem;
+        width: 33.3333%;
+
+        @include breakpoint(md) {
+            width: 100%;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+.contact {
+
+// #HERO
+// =========================================================================
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem;
+        text-align: center;
+        
+        h1 {
+            color: $white;
+            text-transform: uppercase;
+            font-size: ms(10);
+
+            @include breakpoint(md) {
+                font-size: ms(6);
+            }
+        }
+
+        h6 {
+            color: $white;
+        }
+    }
+
+    &-content {
+        padding: 4rem 0;
+
+        ul {
+            list-style-type: none;
+            margin-bottom: 2rem;
+        }
+    }
+
+    form {
+
+        @include breakpoint(md) {
+            padding: 0 2rem;
+        }
+    }
+}
+
+.map {
+    height: 400px;
+}
+
+
+
+// #MENU
+// =========================================================================
+
+.off-canvas {
+    text-align: center;
+
+    img {
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        font-size: ms(3);
+        display: block;
+        padding: 1rem;
+    }
+}
+
+
+
+// #SEARCH
+// =========================================================================
+
+.search {
+
+// #HERO
+// =========================================================================
+
+    .hero {
+        display: flex;
+        align-items: center;
+        padding: 4rem;
+        
+        h1 {
+            color: $white;
+            text-transform: uppercase;
+            font-size: ms(10);
+        }
+    }
+
+    &-content {
+        padding: 4rem 0;
+
+        ul {
+            list-style-type: circle;
+        }
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        background: color(black);
+        padding: 1rem;
+        border-radius: radius(small);
+        @include shadow(light);
+        margin-bottom: 2rem;
+    }
+
+    .field {
+        width: 100%;
+        margin-right: 1rem;
+    }
+
+    input {
+        color: color(white);
+
+        &::placeholder {
+            color: color(white);
+        }
+    }
+
+    button {
+        border-radius: radius(small);
+        padding: 0 1.5rem;
+    }
+}

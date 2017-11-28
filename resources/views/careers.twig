@@ -1,0 +1,127 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}careers{% endblock %}
+{% block title %}Careers{% endblock %}
+
+{% block content %}
+
+{% embed 'partials/hero.twig' ignore missing with {'full': false} %}
+    {% block heroContent %}
+        <h1>Your Career Happens Here</h1>
+        <h6>Plant your roots in Windsor-Essex</h6>
+    {% endblock %}
+    {% block heroBG %}<img src="/assets/img/careers-header.jpg" draggable="false" class="image--cover">{% endblock %}
+{% endembed %}
+
+<!-- End Hero -->
+
+<div class="careers-content">
+    <div class="container container--full">
+        <article class="column-8">
+            <h3>Your Life at Landscape Effects</h3>
+            <hr>
+            <p>At Landscape Effects, we’re well know for creating award winning landscapes, but what we’re most proud of is our team. Our people are the best example of our brand and culture. Each and every role contributes to one common goal: creating a company we can be proud of as one of the top Landscape and Design companies in Ontario.</p>
+            <p>If you’re the type of person that likes to think outside the box, develop meaningful relationships and be part of a growing environment then there may be a good fit for you here at Landscape Effects.</p>
+            <h5>Recipe for success</h5>
+            <hr>
+            <p>Making Southwestern Ontario a more beautiful place isn’t easy, and it requires a great community of people to do so. At Landscape effects, we’re focused on taking your career and your ideas to the next level. Our success was built on people who weren’t afraid to think outside the box and push the limits. If you’re that kind of person, then we want you! Our industry leading development program and compensation packages are a testament to our commitment to helping our team members grow both personally and professionally. Our interest in finding the perfect fit shows that we know what it takes to ensure that you’ll enjoy coming into work in the morning and have fun being here.</p>
+            <ul class="list-inline">
+                <li><img src="/assets/img/careers-list-1.jpg" draggable="false" class="image--cover"></li>
+                <li><img src="/assets/img/careers-list-2.jpg" draggable="false" class="image--cover"></li>
+                <li><img src="/assets/img/careers-list-3.jpg" draggable="false" class="image--cover"></li>
+            </ul>
+            <h6>We want to invest in you!</h6>
+            <ul>
+                <li>We’re committed to providing opportunities for continued education and career advancement through workshops, seminars and coaching.</li>
+                <li>We’re not afraid to spend money on industry leading facilities, equipment and software so that you have everything you need to succeed here.</li>
+                <li>We have a variety of programs in place to allow you to grow personally, professionally, and help you advance in your career with Landscape Effects</li>
+                <li>We want you to love you being here, as much as we love having you. We won’t hesitate to show our appreciation for our team by hosting parties parties and outings.</li>
+            </ul>
+            <h6>We're always looking to grow our team</h6>
+            <ul class="list-inline">
+                <li><a href="https://www.kijiji.ca/v-view-details.html?adId=1310543741&requestSource=b" target="_blank"><img src="/assets/img/jobs/snow_equipment_op.jpg" draggable="false"></a></li>
+                <li><a href="https://www.kijiji.ca/v-view-details.html?adId=1310541488&requestSource=b" target="_blank"><img src="/assets/img/jobs/snow_shoveler.jpg" draggable="false"></a></li>
+                <li><a href="https://www.kijiji.ca/v-view-details.html?adId=1310543109&requestSource=b" target="_blank"><img src="/assets/img/jobs/truck_driver.jpg" draggable="false"></a></li>
+            </ul>
+            <div class="careers__carousel">
+                {% for item in carousel %}
+                    <img src="/assets/img/carousel/{{ item.img }}.jpg" draggable="false">
+                {% endfor %}
+            </div>
+        </article>
+        <aside class="column-4">
+            <img src="/assets/img/careers-1.jpg" draggable="false">
+            <h5>What's in it for you?</h5>
+            <ul class="benefits">
+                <li>
+                    <img src="/assets/img/careers-icon-1.svg" draggable="false">
+                    <p>Competitive Compensation</p>
+                </li>
+                <li>
+                    <img src="/assets/img/careers-icon-2.svg" draggable="false">
+                    <p>Unlimited Growth Opportunity</p>
+                </li>
+                <li>
+                    <img src="/assets/img/careers-icon-3.svg" draggable="false">
+                    <p>Positive Environment</p>
+                </li>
+                <li>
+                    <img src="/assets/img/careers-icon-4.svg" draggable="false">
+                    <p>Great Benefits</p>
+                </li>
+                <li>
+                    <img src="/assets/img/careers-icon-5.svg" draggable="false">
+                    <p>Plenty of Vacation</p>
+                </li>
+                <li>
+                    <img src="/assets/img/careers-icon-6.svg" draggable="false">
+                    <p>Great People</p>
+                </li>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pTk0jcGqDGs" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/F59kfth1R7w" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/drNxYm1GzJ8" frameborder="0" allowfullscreen></iframe>
+            </ul>
+        </aside>
+    </div>
+    <div class="container--block">
+        <h2>With a family this big you're sure to fit in.</h2>
+        <ul class="list-inline">
+            <li><img src="/assets/img/company-1.png" draggable="false"></li>
+            <li><img src="/assets/img/company-2.png" draggable="false"></li>
+            <li><img src="/assets/img/company-3.png" draggable="false"></li>
+            <li><img src="/assets/img/company-4.png" draggable="false"></li>
+            <li><img src="/assets/img/company-5.png" draggable="false"></li>
+        </ul>
+        <p>Landscape Effects is one of the vital pieces that make up the entire Landscape Effects Group of companies. The Landscape Effects Group is a system of inter-related companies created to enhance the outdoor experience for all of us. As a result each company was built on the same foundation and set of principals that has allowed Landscape Effects to become synonymous with a lifestyle without limits. Each company in this vibrant group shares the same passion for growth, energetic environment and positive culture. Even better, each company in this group represents an opportunity for you to find ideal fit in a career that’s tailored for you.</p>
+        <h3>Send Us your resume and let the journey begin.</h3>
+        <form action="{{ path_for('careers') }}" method="post" enctype="multipart/form-data" class="careers-form">
+            <div class="field-group">
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="field">
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone">
+                </div>
+            </div>
+            <div class="field field--message">
+                <label for="message">Message</label>
+                <textarea name="message"></textarea>
+            </div>
+            <div class="field">
+                <input type="file" name="file" class="file">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<section class="about__cta">
+    <h2>The best time to plant a tree was 20 years ago.  The second best time is now...</h2>
+</section>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+<h2>A new message from {{ params.name }}</h2><br>
+
+{% if params.subject %}
+    Subject: {{ params.subject }} <br>
+{% endif %}
+Email: {{ params.email }} <br>
+{% if params.phone %}
+    Phone: {{ params.phone }} <br>
+{% endif %}
+Message: {{ params.message }}

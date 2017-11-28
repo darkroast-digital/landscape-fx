@@ -1,0 +1,119 @@
+{% extends 'layouts/app.twig' %}
+{% block pageclass %}about{% endblock %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+
+{% embed 'partials/hero.twig' ignore missing with {'full': false} %}
+    {% block heroContent %}<h1>We are Landscape Effects</h1>{% endblock %}
+    {% block heroBG %}<img src="/assets/img/about-header.jpg" draggable="false" class="image--cover">{% endblock %}
+{% endembed %}
+
+<!-- End Hero -->
+
+<section class="about__intro container--collapse container--full">
+    <div class="about__intro-content column-6">
+        <h4>At Landscape Effects</h4>
+        <h2>
+            We Are 
+            <span class="switcher">
+                <span>Fun</span>
+                <span>Energetic</span>
+                <span>Bold</span>
+            </span>
+        </h2>
+        <p>For over 25 years we’ve been pushing limits and creating breathtaking landscapes across Ontario. Our combination of exceptional service and industry leading design has been our recipe for success. With this success spanning more than 2 and a half decades our team just can’t wait to define our future.</p>
+        <p>When you visit our design studio, you inherently become part of our family. We’ll begin by getting to know as much as we can about you home, your family and your lifestyle. With the possibilities of what we can do may be endless, we’re only interested in the ones that are right for you. We want to completely understand all of your expectations and dreams of your outdoor space. This enables us to create an outdoor living environment that fits you perfectly.</p>
+    </div>
+    <div class="about__intro-image column-6">
+        <img src="/assets/img/about-featured.jpg" draggable="false" class="image--cover">
+    </div>
+</section>
+
+<!-- End About Intro -->
+
+<section class="about__Services container--collapse container--full">
+    <div class="service column-4">
+        <div class="service__container">
+            <h6><em>We do...</em></h6>
+            <h2><span>01.</span> Landscaping</h2>
+            <p>The heart and soul of what we do is landscaping, and we do it better than anyone else. From concept to completion, we'll work with you to make your new outdoor living environment a beautiful reality.</p>
+        </div>
+        <img src="/assets/img/service-1.jpg" draggable="false" class="service__image image--cover">
+    </div>
+    <div class="service column-4">
+        <div class="service__container">
+            <h6><em>We do...</em></h6>
+            <h2><span>02.</span> Property Management</h2>
+            <p>With Landscape Effects Group Property Management, you can rest assured that your grounds will be meticulously mantained, guaranteeing both pedestrain saftey and exceptional appearance.</p>
+        </div>
+        <img src="/assets/img/service-2.jpg" draggable="false" class="service__image image--cover">
+    </div>
+    <div class="service column-4">
+        <div class="service__container">
+            <h6><em>We do...</em></h6>
+            <h2><span>03.</span> Snow Removal</h2>
+            <p>We provide complete snow and ice management services locally as well as across Canada. We are proud members of Sima and are accredited to operate in the U.S through ASCA.</p>
+        </div>
+        <img src="/assets/img/service-3.jpg" draggable="false" class="service__image image--cover">
+    </div>
+</section>
+
+<!-- End About Services -->
+
+<section class="about__cta">
+    <h2>The most succesful projects are built on collaboration</h2>
+</section>
+
+<!-- End CTA -->
+
+<section class="about__process">
+    <div class="container">
+        <div class="column-6 process-compare">
+                <figure class="image-container is-visible">
+                    <img src="/assets/img/finished-project.jpg" alt="Finished">
+
+                    <div class="resize-img">
+                        <img src="/assets/img/process-project.jpg" alt="Process">
+                    </div>
+
+                    <span class="handle"></span>
+                </figure>
+            </div>
+        <div class="column-6 about__process-content">
+            <h6>Experience</h6>
+            <h2>Our Design Process</h2>
+            <p>When we first meet, we’ll show you the importance of design and introduce key landscaping elements. We’ll clearly explain how we work, including why we charge a design fee. We’ll also tell you what you can expect from us – and what we expect from you. Depending on how involved you want to be, we may even ask you to do a little homework by giving you a questionnaire to help us learn more about you and your family.</p>
+            <p>After our initial meeting you’ll see that professional design is a great investment. Because no matter what the budget is, we always bring the same exceptional level of creativity and artistry to every project. Above all, we want our relationship to be one of mutual honesty, trust and understanding. Because at the end of the day, the most successful projects are built on collaboration.</p>
+        </div>
+    </div>
+</section>
+
+<!-- End Process -->
+
+<section class="about__cta">
+    <h2>Take a chance - go beyond tradition</h2>
+</section>
+
+<!-- END CTA 2 -->
+
+<div class="seciton about__team container--block">
+    <h2>Our Team - on the inside</h2>
+    <hr>
+    <div class="container container--full">
+        {% for item in team %}
+            <figure class="profile column-4">
+                <figcaption>
+                    <h6>{{ item.name }}</h6>
+                    <p>{{ item.title }}</p>
+                </figcaption>
+                <img src="/assets/img/profiles/{{ item.img }}.jpg" draggable="false" class="image--cover">
+            </figure>
+        {% endfor %}
+    </div>
+    <h4>Our Team - on the outside</h4>
+    <hr>
+    <img src="/assets/img/team-outside.jpg" draggable="false" class="image--cover">
+</div>
+
+{% endblock %}
