@@ -40,7 +40,7 @@ class SiteController extends Controller
               ->to([
                     [
                         'name' => 'Landscape Effects',
-                        'email' => 'brenda@landscapefx.com',
+                        'email' => 'jason@landscapefx.com',
                     ]
               ])
               ->attatchments($_FILES)
